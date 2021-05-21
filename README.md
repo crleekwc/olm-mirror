@@ -7,7 +7,7 @@ First: Build the image
 
 Then: Run the container  
 `podman run
- -v <host directory>:${CATALOG_DI}:z
+ -v <host directory>:${CATALOG_DIR}:z
  -e REG_CREDS=auth.json
  localhost/olm-mirror`
  
