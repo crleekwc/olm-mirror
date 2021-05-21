@@ -2,7 +2,7 @@
 This container can be used to download the Operator Catalog on any operating system that can create containers.
 
 ### Usage
-First: Build the image 
+First: Build the image  
 `podman build --tag olm-mirror ./Dockerfile`
 
 Then: Run the container  
