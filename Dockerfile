@@ -3,7 +3,7 @@ FROM registry.access.redhat.com/ubi8/ubi:latest
 LABEL maintainer="chrilee@redhat.com"
 
 ENV REG_CREDS="pull-secret.json" \
-    OCP_TAG="4.7" \
+    OCP_TAG="v4.7" \
     OCP_VERSION="4.7.5" \
     REGISTRY="registry.redhat.io/redhat/redhat-operator-index" \
     CATALOG_DIR="/opt/operator-catalog"
@@ -16,7 +16,7 @@ RUN mkdir -p ${CATALOG_DIR} && \
 WORKDIR ${CATALOG_DIR}
 
 CMD oc adm catalog mirror \
-    ${REGISTRY}:v${OCP_TAG} \
+    ${REGISTRY}:${OCP_TAG} \
     file:///local/index \
     -a ${REG_CREDS} \
     --insecure 
